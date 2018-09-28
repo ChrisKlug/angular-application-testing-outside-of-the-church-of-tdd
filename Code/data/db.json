@@ -1,0 +1,98 @@
+{
+    "artists": [
+        {
+            "id": 1,
+            "name": "Metallica",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/5a06711d7fc48d5e0e3f9a3274ffed3f0af1bd91",
+                    "width": 640
+                  },
+                  {
+                    "height": 320,
+                    "url": "https://i.scdn.co/image/0c22030833eb55c14013bb36eb6a429328868c29",
+                    "width": 320
+                  },
+                  {
+                    "height": 160,
+                    "url": "https://i.scdn.co/image/c1fb4d88de092b5617e649bd4c406b5cab7d3ddd",
+                    "width": 160
+                  }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Abba",
+            "images": [
+                {
+                  "height": 640,
+                  "url": "https://i.scdn.co/image/733e98edfdc11feea07914532603c080fa432159",
+                  "width": 640
+                },
+                {
+                  "height": 320,
+                  "url": "https://i.scdn.co/image/0666d9d1b65b626e98c5273a4f44ff34951f8e1f",
+                  "width": 320
+                },
+                {
+                  "height": 160,
+                  "url": "https://i.scdn.co/image/91b0c71fb753135bc083a11043797ce05168d00a",
+                  "width": 160
+                }
+              ]
+        },
+        {
+            "id": 3,
+            "name": "Britney Spears",
+            "images": [
+                {
+                  "height": 1000,
+                  "url": "https://i.scdn.co/image/7fa2bde8d2837784a847f8201686b257757a749f",
+                  "width": 1000
+                },
+                {
+                  "height": 640,
+                  "url": "https://i.scdn.co/image/f3f0e89644c30c96e50ddd483e3abedf744a460f",
+                  "width": 640
+                },
+                {
+                  "height": 200,
+                  "url": "https://i.scdn.co/image/18f8f2204dd44ecaaaf587ce4429493f01887d93",
+                  "width": 200
+                },
+                {
+                  "height": 64,
+                  "url": "https://i.scdn.co/image/f9c035d14928a9e9e92d749f78293de8015c88b3",
+                  "width": 64
+                }
+              ]
+        },
+        {
+            "id": 4,
+            "name": "Amy Winehouse",
+            "images": [
+                {
+                  "height": 650,
+                  "url": "https://i.scdn.co/image/316a6ef4535c377bdfaea61c99177de9d19661b4",
+                  "width": 1000
+                },
+                {
+                  "height": 416,
+                  "url": "https://i.scdn.co/image/98c2baaf1fd980315ec00fd2d1a98a0feda53740",
+                  "width": 640
+                },
+                {
+                  "height": 130,
+                  "url": "https://i.scdn.co/image/281635c3bbf95b0af935498631d2c3f3fe12db59",
+                  "width": 200
+                },
+                {
+                  "height": 42,
+                  "url": "https://i.scdn.co/image/4427013b592804fca5cb1a6a06d574d761f27ba9",
+                  "width": 64
+                }
+              ]
+        }
+    ]
+}

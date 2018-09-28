@@ -1,0 +1,15 @@
+<ng-container *ngIf="artists$|async as artists; else loading">
+  <ng-container *ngIf="artists.length; else emptyResult">
+    <ul>
+      <li *ngFor="let artist of artists">
+        <img [src]="artist|artistImage" *ngIf="artist.images"> {{artist.name}}
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #emptyResult>
+    <span>No results! Please try another query...</span>
+  </ng-template>
+</ng-container>
+<ng-template #loading>
+  <em>loading...</em>
+</ng-template>

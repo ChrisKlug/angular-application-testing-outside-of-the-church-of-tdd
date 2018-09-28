@@ -1,0 +1,4 @@
+<p>
+  <input type="text" #query (debounce)="search($event)" autofocus />
+</p>
+<artist-list *ngIf="artists$" [artists]="artists$"></artist-list>
