@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MusicService } from './services/music.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,12 +14,10 @@ describe('AppComponent', () => {
             declarations: [
                 AppComponent
             ],
+            schemas: [ NO_ERRORS_SCHEMA ],
             providers: [
                 MusicService,
                 { provide: HttpClient, useValue: {} }
-            ],
-            schemas: [
-                NO_ERRORS_SCHEMA
             ]
         })
             .compileComponents();
@@ -37,11 +35,10 @@ describe('AppComponent', () => {
 
     it('does a search on search', () => {
         let search: string;
-
         spyOn(TestBed.get(MusicService), "searchArtist").and.callFake(x => search = x);
-
+    
         component.search("TEST");
-
+    
         expect(search).toBe("TEST");
     })
 

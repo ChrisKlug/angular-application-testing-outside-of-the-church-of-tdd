@@ -1,5 +1,5 @@
 import { AppPage } from './app.po';
-import { element, by, ExpectedConditions, browser } from 'protractor';
+import { browser, logging, element, by, ExpectedConditions } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -29,25 +29,31 @@ describe('workspace-project App', () => {
       expect(await items.first().getText()).toBe("Metallica")
     })
 
-    it('starts search and shows loading text', async () => {
-      await page.navigateTo();
+  });
 
+  it('starts search and shows loading text', async () => {
+    try {
       browser.waitForAngularEnabled(false);
 
-      try {
+      await page.navigateTo();
 
-        let searchBox = page.getSearchBox();
-        await searchBox.sendKeys("metallica");
+      let searchBox = page.getSearchBox();
+      await searchBox.sendKeys("metallica");
 
-        let em = element(by.tagName("em"));
-        await browser.wait(ExpectedConditions.presenceOf(em), 1000);
+      let em = element(by.cssContainingText("em", "loading..."));
+      await browser.wait(ExpectedConditions.presenceOf(em), 1000);
 
-        expect(await em.getText()).toBe("loading...");
+      expect(await em.getText()).toBe("loading...");
+    } finally {
+      browser.waitForAngularEnabled(true);
+    }
+  })
 
-      } finally {
-        browser.waitForAngularEnabled(true);
-      }
-    })
-
+  afterEach(async () => {
+    // Assert that there are no errors emitted from the browser
+    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+    expect(logs).not.toContain(jasmine.objectContaining({
+      level: logging.Level.SEVERE,
+    } as logging.Entry));
   });
 });

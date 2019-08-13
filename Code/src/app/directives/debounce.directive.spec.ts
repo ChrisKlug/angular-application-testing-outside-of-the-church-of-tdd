@@ -12,7 +12,7 @@ describe('DebounceDirective', () => {
     beforeEach(() => {
         directive.ngOnInit();
     })
-
+    
     afterEach(() => {
         directive.ngOnDestroy();
     })
@@ -23,11 +23,11 @@ describe('DebounceDirective', () => {
 
     it('emits when given more than 2 characters', (done) => {
         let val: string;
-
+    
         directive.onDebounce.subscribe(x => val = x)
-
+    
         directive.onInput("abc");
-
+    
         timer(300).subscribe(x => {
             expect(val).toBe("abc");
             done();
@@ -45,7 +45,7 @@ describe('DebounceDirective', () => {
             expect(val).toBe("abc");
         })
     }))
-
+    
     it('emits when given more than 2 characters', fakeAsync(() => {
         let val: string;
     

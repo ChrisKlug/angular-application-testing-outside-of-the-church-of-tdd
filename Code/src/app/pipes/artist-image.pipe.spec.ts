@@ -1,6 +1,7 @@
 import { ArtistImagePipe } from "./artist-image.pipe";
 
 describe(`ArtistImagePipe`, () => {
+
     let pipe: ArtistImagePipe;
     
     beforeEach(() => {
@@ -8,16 +9,17 @@ describe(`ArtistImagePipe`, () => {
     });
 
     it(`can be created`, () => {
+        let pipe = new ArtistImagePipe()
+    
         expect(pipe).toBeTruthy()
     });
-    
     
     it(`returns null if passed null`, () => {
         let response = pipe.transform(null)
     
         expect(response).toBeNull()
     });
-
+    
     it('returns null if artist has no images array', () => {
         let response = pipe.transform({ id: 1, name: "", images: null });
     

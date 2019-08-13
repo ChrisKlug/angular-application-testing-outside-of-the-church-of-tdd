@@ -1,14 +1,10 @@
 import { MusicService, IArtist } from './music.service';
 import { TestBed } from '@angular/core/testing';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { BehaviorSubject } from 'rxjs';
 
 describe('MusicService', () => {
-
-    let http: HttpTestingController;
-    let svc: MusicService;
-
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
@@ -20,15 +16,17 @@ describe('MusicService', () => {
         });
     });
 
+    let http: HttpTestingController;
+    let svc: MusicService;
+
     beforeEach(() => {
         http = TestBed.get(HttpTestingController);
         svc = TestBed.get(MusicService);
     })
-
+    
     afterEach(() => {
         http.verify();
     })
-
 
     it('should be created', () => {
         let svc = TestBed.get(MusicService);
@@ -49,7 +47,7 @@ describe('MusicService', () => {
             let artists: IArtist[];
         
             svc.searchArtist("test").subscribe(x => artists = x);
-        
+
             http.expectOne("http://localhost:3000/artists?q=test").flush(fakeResult);
         
             expect(artists).toBe(fakeResult);
